@@ -10,17 +10,31 @@ Application has CRUD Operation on Mysql User tables via Http REST API.
 
 # Project Setup 
 Once the prerequisites are installed, checkout the project and create a virtual envoriment under the project 
-##### virtualenv venv
-##### source venv/bin/activate
+```
+virtualenv venv
+```
+```
+source venv/bin/activate
+```
 
 Install django using the following command 
-##### pip install django==1.11.7(Latest version)
-##### pip install djangorestframework
+```
+pip install django==1.11.7(Latest version)
+```
+```
+pip install djangorestframework
+```
 
 Create below schema in MySQL 
-##### create database instawork_test;
-##### use instawork_test;
-##### create table users(ID int NOT NULL AUTO_INCREMENT,FirstName varchar(255) NOT NULL,LastName varchar(255),Phone int(11),Email varchar(255),Role enum(‘admin’,’regular’),PRIMARY KEY (ID)); 
+``` 
+create database instawork_test;
+```
+```
+use instawork_test;
+```
+```
+create table users(ID int NOT NULL AUTO_INCREMENT,FirstName varchar(255) NOT NULL,LastName varchar(255),Phone int(11),Email varchar(255),Role enum(‘admin’,’regular’),PRIMARY KEY (ID)); 
+```
 Django settings is already modified to connect to this database, please modify the DB user,password,port and hostname for the below section in setting.py under backend_test folder. 
 DATABASES = {
     'default': {
@@ -34,10 +48,14 @@ DATABASES = {
 }
 
 Install MySQL client for Django to connect MySQL Database
-##### pip install MySQL-python
+``` 
+pip install MySQL-python 
+```
 
 Test the connection using the below command from backend_test folder.
-##### python manage.py inspectdb 
+```
+python manage.py inspectdb 
+```
 The output would look like something as below
 from __future__ import unicode_literals
 
@@ -52,12 +70,11 @@ class Users(models.Model):
     email = models.CharField(db_column='EMAIL', max_length=255, blank=True, null=True)  # Field name made lowercase.
     role = models.CharField(db_column='ROLE', max_length=7, blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'Users'
-
+    
 Run the server if above command is sucessfull from backend_test folder. Below is the command to start the server 
-##### python manage.py runserver 
+```
+python manage.py runserver
+```
 Below is the output for successful server launch
 Performing system checks...
 
