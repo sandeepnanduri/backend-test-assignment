@@ -35,7 +35,7 @@ use instawork_test;
 ```
 create table users(ID int NOT NULL AUTO_INCREMENT,FirstName varchar(255) NOT NULL,LastName varchar(255),Phone int(11),Email varchar(255),Role enum(‘admin’,’regular’),PRIMARY KEY (ID)); 
 ```
-Django settings is already modified to connect to this database, please modify the DB user,password,port and hostname for the below section in setting.py under backend_test folder. <br />
+Django settings is already modified to connect to this database, please modify the DB user,password,port and hostname for the below section in setting.py under backend_test folder. <br /><br />
 DATABASES = {<br />
     'default': {<br />
         'ENGINE': 'django.db.backends.mysql',<br />
