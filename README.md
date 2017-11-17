@@ -1,6 +1,6 @@
 # Python Django Rest API back end sample application 
 Built this application using DjanoRESTframework<br />
-Application has CRUD Operation on Mysql User tables via Http REST API.<br /> 
+Application has CRUD Operation on Mysql User tables via Http REST API<br /> 
 
 # prerequisites 
 1. Python2.7 or Python3
