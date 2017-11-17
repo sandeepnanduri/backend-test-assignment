@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from rest_api_test.models import Users
 from django.http import Http404
 
 from rest_api_test.serializers import UserSerializer
@@ -13,7 +13,7 @@ class UserList(APIView):
     List all users, or create a new user.
     """
     def get(self, request, format=None):
-        users = User.objects.all()
+        users = Users.objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
@@ -37,8 +37,8 @@ class UserDetail(APIView):
     """
     def get(self, pk):
         try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
+            return Users.objects.get(pk=pk)
+        except Users.DoesNotExist:
             raise Http404
 
     def get(self, request, pk, format=None):
